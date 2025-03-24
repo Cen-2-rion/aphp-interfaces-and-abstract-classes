@@ -13,6 +13,10 @@ abstract class Employee
         $this->name = $name;
         $this->surname = $surname;
         $this->salary = $salary;
+
+        if ($this->salary < 0) {
+            throw new \Exception('зарплата не может быть меньше 0');
+        }
     }
 
     abstract public function getInfo(): string;
